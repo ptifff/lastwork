@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "59364518993",
+    "firebase_url": "https://ubhan-drive-default-rtdb.firebaseio.com",
+    "project_id": "ubhan-drive",
+    "storage_bucket": "ubhan-drive.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59364518993:android:d078295adc544460fc5c70",
+        "android_client_info": {
+          "package_name": "com.example.drive_ubhan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59364518993-8lf2d24jbrnu478j537fg8ek7p8mv7mu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF13v4mXSH4Qy8pJL2EcvBoREcyWgKzG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59364518993-8lf2d24jbrnu478j537fg8ek7p8mv7mu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

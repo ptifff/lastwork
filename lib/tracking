@@ -1,0 +1,72 @@
+// import
+//
+// 'package:flutter/material.dart';
+// import
+//
+// 'package:firebase_analytics/firebase_analytics.dart';
+// import
+//
+// 'package:firebase_analytics/observer.dart';
+//
+// void main() {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//   final FirebaseAnalytics analytics = FirebaseAnalytics.instance; // Use the named constructor 'instance'
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Firebase Analytics Demo',
+//       navigatorObservers: [
+//         FirebaseAnalyticsObserver(analytics: analytics),
+//       ],
+//       home: MyHomePage(analytics: analytics),
+//     );
+//   }
+// }
+//
+// class MyHomePage extends StatelessWidget {
+//   final FirebaseAnalytics analytics;
+//
+//   MyHomePage({required this.analytics});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Flutter Firebase Analytics Demo'),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             Text(
+//               'Click the button to log an event:',
+//             ),
+//             ElevatedButton(
+//               onPressed: () async {
+//                 // Log the button click event
+//                 await analytics.logEvent(
+//                   name: 'button_click',
+//                   parameters: <String, dynamic>{
+//                     'screen': 'home',
+//                     'button_id': 1,
+//                   },
+//                 );
+//                 ScaffoldMessenger.of(context).showSnackBar(
+//                   SnackBar(
+//                     content: Text('Button Clicked! Event logged.'),
+//                   ),
+//                 );
+//               },
+//               child: Text('Click Me'),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
