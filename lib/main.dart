@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
         '/instructor_homescreen': (context) => InstructorHomeScreen(),
         '/instructor_uploading': (context) => InstructorTopicSelection(),
         '/instructor_lectures_uploads': (context) => InstructorUploadScreen(),
-        '/instructor_tracking': (context) => instructortracking(),
+        '/instructor_tracking': (context) => InstructorTracking(),
         '/instructor_scheduling': (context) => EventCalendarScreen(),
         '/booking_complete': (context) => bookingcomplete(),
         '/home': (context) => Home(),

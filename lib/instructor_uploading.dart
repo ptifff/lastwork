@@ -85,12 +85,12 @@ class PanelCard extends StatelessWidget {
   void _handlePanelTap(BuildContext context) {
     // Add your desired action here when the panel is tapped.
     // For example, you can navigate to a new screen.
-    if (label == 'Lectures') {
+    if (label == 'Upload Lectures') {
       // // Navigate to the Instructor screen.
        Navigator.of(context).push(
        MaterialPageRoute(builder: (context) => InstructorUploadScreen()),
        );
-    } else if (label == 'Quizzes') {
+    } else if (label == 'Create Quizzes') {
       // // Navigate to the Student screen.
        Navigator.of(context).push(
         MaterialPageRoute(builder: (context) => Home()),
