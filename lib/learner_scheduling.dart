@@ -4,6 +4,8 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'about_us.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -99,7 +101,6 @@ class _LearnerEventScreenState extends State<LearnerEventScreen> {
       builder: (context) => AlertDialog(
 
         title: Container(
-          color: Colors.purple, // Set the background color for the title
 
           child: const Text(
             'Add New Event',
@@ -238,9 +239,42 @@ class _LearnerEventScreenState extends State<LearnerEventScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Student Scheduling'),
-        backgroundColor: Colors.purple,
+        title: const Text('Learner Scheduling', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
+        ),
       ),
+      backgroundColor: Colors.purple,
+
+    ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            FeatureDrawerButton(icon: Icons.school, text: 'Learning', onTap: () {
+              Navigator.of(context).pushNamed('/student_learning_selection');
+            },),
+            FeatureDrawerButton(icon: Icons.book, text: 'Booking', onTap: () {
+              Navigator.of(context).pushNamed('/instructor_view');
+
+            },),
+            FeatureDrawerButton(icon: Icons.schedule, text: 'Scheduling', onTap: () {
+              Navigator.of(context).pushNamed('/learner_scheduling');
+            },),
+            FeatureDrawerButton(icon: Icons.track_changes, text: 'Tracking', onTap: () {
+              Navigator.of(context).pushNamed('/learner_tracking');
+            },),
+            FeatureDrawerButton(icon: Icons.live_help, text: 'Assistance Service', onTap: () {
+              Navigator.of(context).pushNamed('/assistance_service_student');
+            },),
+            FeatureDrawerButton(icon: Icons.info, text: 'About Us', onTap: () {
+              Navigator.of(context).pushNamed('/about_us');
+            },),
+            FeatureDrawerButton(icon: Icons.logout, text: 'Logout', onTap: () {
+              Navigator.of(context).pushNamed('/login_student');
+            },),
+          ],
+        ),
+      ),
+
       body: Column(
         children: [
           TableCalendar(

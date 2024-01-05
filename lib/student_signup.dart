@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'helper.dart';
-import 'login_student.dart';
+import 'student_login.dart';
 
 void main() {
   runApp(StudentSignUpScreen());

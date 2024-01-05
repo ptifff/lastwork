@@ -38,9 +38,15 @@ class AllInstructorsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(' Instructors'),
+        title: Text(
+          ' Instructors',
+          style: TextStyle(
+            color: Colors.white, // Set app bar text color to white
+          ),
+        ),
         backgroundColor: Colors.purple,
       ),
+
       drawer: Drawer(
         child: ListView(
           children: [
@@ -55,7 +61,7 @@ class AllInstructorsScreen extends StatelessWidget {
                 icon: Icons.book,
                 text: 'Booking',
                 onTap: () {
-                  Navigator.of(context).pushNamed('/instructor_booking');
+                  Navigator.of(context).pushNamed('/instructor_view');
                 }),
             FeatureDrawerButton(
                 icon: Icons.schedule,
@@ -216,26 +222,33 @@ class InstructorBox extends StatelessWidget {
           Expanded(
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
+
               child: Column(
                 children: [
-                  Text('Name: $firstname $lastname', style: TextStyle(fontSize: 16.0)),
-                  SizedBox(height: 8.0),
+                  Text('Name: $firstname $lastname', style: TextStyle(fontSize: 14.0)),
+                  SizedBox(height: 4.0),
                   Text('Experience: $experience', style: TextStyle(fontSize: 14.0)),
                 ],
               ),
             ),
           ),
           Container(
-            height: 42.0, // Set a fixed height for the button container
+            height: 30.0, // Set a fixed height for the button container
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => bookingcomplete()));
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.purple, // Set the background color to purple
+                backgroundColor: Colors.purple,
+
+                // Set the background color to purple
               ),
 
-              child: Text('Book Now'),
+
+              child: Text('Book Now',style: TextStyle(
+                          color: Colors.white, // Set text color to white
+                          fontSize: 16.0, // You can adjust the font size as needed
+                           ),),
             ),
           ),
         ],

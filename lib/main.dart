@@ -18,12 +18,12 @@ import 'instructor_view.dart';
 import 'learner_scheduling.dart';
 import 'learner_tracking.dart';
 import 'learning_material.dart';
-import 'login_student.dart';
 import 'quiz/home.dart';
 import 'selection_screen.dart';
 import 'firebase_options.dart';
 import 'student_learning_selection.dart';
 import 'student_lectures.dart';
+import 'student_login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashScreen(),
         '/login': (context) => LoginScreen(),
-        '/login_student': (context) => StudentLogin(),
+        '/student_login': (context) => StudentLogin(),
         '/signup': (context) => InstructorRegister(),
         '/homeScreen': (context) => HomeScreen(),
         '/booking': (context) => InstructorSelection(),

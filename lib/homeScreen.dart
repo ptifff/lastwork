@@ -10,15 +10,24 @@ class _HomeScreenState extends State<HomeScreen> {
     var accentColor;
     return Scaffold(
           appBar: AppBar(
-            centerTitle: true,
-            title: Text('Learner Home Screen'),
-            backgroundColor: Colors.purple,
+
+              title: Text(
+                ' Learner Home Screen',
+                style: TextStyle(
+                  color: Colors.white, // Set app bar text color to white
+                ),
+              ),
+              backgroundColor: Colors.purple,
             actions: [
             IconButton(
               icon: Icon(Icons.logout),
               onPressed: () {
                 // Implement logout functionality here
+                Navigator.of(context).pushNamed('/student_login');
+
               },
+              color: Colors.white, // Set app bar icon color to white
+
             ),
           ],
         ),
@@ -45,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.of(context).pushNamed('/about_us');
                       },),
                       FeatureDrawerButton(icon: Icons.logout, text: 'Logout', onTap: () {
-                        Navigator.of(context).pushNamed('/login_student');
+                        Navigator.of(context).pushNamed('/student_login');
                       },),
                     ],
                   ),

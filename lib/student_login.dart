@@ -29,7 +29,7 @@ class StudentLogin extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Login Your Student Account",
+                "Login ",
                 style: TextStyle(
                     color: Colors.purple,
                     fontSize: 20,

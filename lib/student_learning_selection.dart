@@ -10,17 +10,23 @@ class StudentTopicSelection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Learning Material'),
+        centerTitle: true,
+        title: const Text('Learning Material', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
+        ),
+        ),
         backgroundColor: Colors.purple,
+
       ),
       drawer: Drawer(
         child: ListView(
           children: [
             FeatureDrawerButton(icon: Icons.school, text: 'Learning', onTap: () {
-              Navigator.of(context).pushNamed('/learning_material');
+              Navigator.of(context).pushNamed('/student_learning_selection');
             },),
             FeatureDrawerButton(icon: Icons.book, text: 'Booking', onTap: () {
-              Navigator.of(context).pushNamed('/instructor_booking');
+              Navigator.of(context).pushNamed('/instructor_view');
+
             },),
             FeatureDrawerButton(icon: Icons.schedule, text: 'Scheduling', onTap: () {
               Navigator.of(context).pushNamed('/learner_scheduling');
@@ -40,6 +46,7 @@ class StudentTopicSelection extends StatelessWidget {
           ],
         ),
       ),
+
       body: Container(
         color: Colors.white, // White background
         padding: EdgeInsets.all(16.0),

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'login_student.dart'; // Import this to use Future.delayed
+import 'student_login.dart'; // Import this to use Future.delayed
 
 
 void main() {
