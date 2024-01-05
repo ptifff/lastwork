@@ -23,19 +23,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const InstructorUploadScreen(),
+      home: const StudentsLectureScreen(),
     );
   }
 }
 
-class InstructorUploadScreen extends StatefulWidget {
-  const InstructorUploadScreen({Key? key}) : super(key: key);
+class StudentsLectureScreen extends StatefulWidget {
+  const StudentsLectureScreen({Key? key}) : super(key: key);
 
   @override
-  _InstructorUploadScreenState createState() => _InstructorUploadScreenState();
+  _StudentsLectureScreenState createState() => _StudentsLectureScreenState();
 }
 
-class _InstructorUploadScreenState extends State<InstructorUploadScreen> {
+class _StudentsLectureScreenState extends State<StudentsLectureScreen> {
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
   List<Map<String, dynamic>> pdfData = [];
 
@@ -80,7 +80,7 @@ class _InstructorUploadScreenState extends State<InstructorUploadScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pdfs"),
+        title: Text("Lectures"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -132,10 +132,7 @@ class _InstructorUploadScreenState extends State<InstructorUploadScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.upload_file),
-        onPressed: pickFile,
-      ),
+
     );
   }
 }

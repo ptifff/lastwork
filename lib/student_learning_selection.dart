@@ -1,3 +1,4 @@
+import 'package:drive_ubhan/student_lectures.dart';
 import 'package:flutter/material.dart';
 
 import 'instructor_lecture_uploads.dart';
@@ -88,7 +89,7 @@ class PanelCard extends StatelessWidget {
   void _handlePanelTap(BuildContext context) {
     if (label == 'Lectures') {
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => InstructorUploadScreen()),
+        MaterialPageRoute(builder: (context) => StudentsLectureScreen()),
       );
     } else if (label == 'Quizzes') {
       Navigator.of(context).push(

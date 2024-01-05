@@ -23,6 +23,7 @@ import 'quiz/home.dart';
 import 'selection_screen.dart';
 import 'firebase_options.dart';
 import 'student_learning_selection.dart';
+import 'student_lectures.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,6 +45,8 @@ class MyApp extends StatelessWidget {
         '/homeScreen': (context) => HomeScreen(),
         '/booking': (context) => InstructorSelection(),
         '/student_learning_selection': (context) => StudentTopicSelection(),
+        '/student_lectures': (context) => StudentsLectureScreen(),
+
         '/learner_scheduling': (context) => LearnerEventScreen(),
         '/learner_tracking': (context) => learnertracking(),
         '/instructor_booking': (context) => instructorbooking(),
