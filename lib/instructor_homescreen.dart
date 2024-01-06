@@ -5,7 +5,7 @@ class InstructorHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('HomeScreen', style: TextStyle(
+        title: const Text('Home Screen', style: TextStyle(
           color: Colors.white, // Set app bar text color to white
         ),
         ),
@@ -72,7 +72,9 @@ class InstructorHomeScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: FeatureButton(icon: Icons.live_help, text: 'Assistance Service', onTap: () {
-                   },),
+                    Navigator.of(context).pushNamed('/assistance_service_instructor');
+
+                  },),
                 ),
               ],
             ),
