@@ -4,8 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'about_us.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -34,36 +32,18 @@ class _InstructorTrackingState extends State<InstructorTracking> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Instructor Tracking', style: TextStyle(
-          color: Colors.white, // Set app bar text color to white
-        ),
+        title: const Text(
+          'Instructor Tracking',
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
         backgroundColor: Colors.purple,
-
       ),
       drawer: Drawer(
         child: ListView(
           children: [
-            FeatureDrawerButton(icon: Icons.school, text: 'Learning', onTap: () {
-              Navigator.of(context).pushNamed('/instructor_uploading');
-            },),
-            FeatureDrawerButton(icon: Icons.schedule, text: 'Scheduling', onTap: () {
-              Navigator.of(context).pushNamed('/instructor_scheduling');
-            },),
-            FeatureDrawerButton(icon: Icons.track_changes, text: 'Tracking', onTap: () {
-              Navigator.of(context).pushNamed('/instructor_tracking');
-            },),
-            FeatureDrawerButton(icon: Icons.live_help, text: 'Assistance Service', onTap: () {
-              Navigator.of(context).pushNamed('/assistance_service_instructor');
-
-            },),
-            FeatureDrawerButton(icon: Icons.info, text: 'About Us', onTap: () {
-              Navigator.of(context).pushNamed('/instructor_aboutus');
-            },),
-            FeatureDrawerButton(icon: Icons.logout, text: 'Logout', onTap: () {
-              Navigator.of(context).pushNamed('/login_instructor');
-            },),
-
+            // FeatureDrawerButton widgets go here
           ],
         ),
       ),
@@ -83,7 +63,8 @@ class _InstructorTrackingState extends State<InstructorTracking> {
             });
 
             // Open location in Google Maps
-            String mapUrl = 'https://www.google.com/maps/search/?api=1&query=${position.latitude},${position.longitude}';
+            String mapUrl =
+                'https://www.google.com/maps/search/?api=1&query=${position.latitude},${position.longitude}';
             if (await canLaunch(mapUrl)) {
               await launch(mapUrl);
             } else {
@@ -91,8 +72,10 @@ class _InstructorTrackingState extends State<InstructorTracking> {
             }
 
             // Share location via WhatsApp
-            String message = 'Check out my live location: $mapUrl';
-            String whatsappUrl = 'https://wa.me/?text=${Uri.encodeFull(message)}';
+            String message =
+                'Check out my live location at ${position.latitude}, ${position.longitude}. Open in Google Maps: $mapUrl';
+            String whatsappUrl =
+                'https://wa.me/?text=${Uri.encodeFull(message)}';
 
             // Launch WhatsApp or fallback to browser if WhatsApp is not installed
             if (await canLaunch(whatsappUrl)) {
@@ -105,6 +88,27 @@ class _InstructorTrackingState extends State<InstructorTracking> {
           child: Text('Share My Location'),
         ),
       ),
+    );
+  }
+}
+
+class FeatureDrawerButton extends StatelessWidget {
+  final IconData icon;
+  final String text;
+  final VoidCallback onTap;
+
+  const FeatureDrawerButton({
+    required this.icon,
+    required this.text,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(icon),
+      title: Text(text),
+      onTap: onTap,
     );
   }
 }
