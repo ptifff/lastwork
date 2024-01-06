@@ -80,7 +80,13 @@ class _InstructorUploadScreenState extends State<InstructorUploadScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pdfs"),
+        centerTitle: true,
+        title: const Text('Lectures Upload', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
+        ),
+        ),
+        backgroundColor: Colors.purple,
+
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -133,7 +139,11 @@ class _InstructorUploadScreenState extends State<InstructorUploadScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.upload_file),
+        child: Icon(
+          Icons.upload_file,
+          color: Colors.white, // Set the icon color to white
+        ),
+        backgroundColor: Colors.purple,
         onPressed: pickFile,
       ),
     );

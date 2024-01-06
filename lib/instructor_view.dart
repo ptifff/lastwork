@@ -88,7 +88,7 @@ class AllInstructorsScreen extends StatelessWidget {
             }),
             FeatureDrawerButton(
                 icon: Icons.logout, text: 'Logout', onTap: () {
-              Navigator.of(context).pushNamed('/login_student');
+              Navigator.of(context).pushNamed('/student_login');
             }),
           ],
         ),

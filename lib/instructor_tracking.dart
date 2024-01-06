@@ -4,6 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'about_us.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -31,7 +33,39 @@ class _InstructorTrackingState extends State<InstructorTracking> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Live Tracking'),
+        centerTitle: true,
+        title: const Text('Instructor Tracking', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
+        ),
+        ),
+        backgroundColor: Colors.purple,
+
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            FeatureDrawerButton(icon: Icons.school, text: 'Learning', onTap: () {
+              Navigator.of(context).pushNamed('/instructor_uploading');
+            },),
+            FeatureDrawerButton(icon: Icons.schedule, text: 'Scheduling', onTap: () {
+              Navigator.of(context).pushNamed('/instructor_scheduling');
+            },),
+            FeatureDrawerButton(icon: Icons.track_changes, text: 'Tracking', onTap: () {
+              Navigator.of(context).pushNamed('/instructor_tracking');
+            },),
+            FeatureDrawerButton(icon: Icons.live_help, text: 'Assistance Service', onTap: () {
+              Navigator.of(context).pushNamed('/assistance_service_instructor');
+
+            },),
+            FeatureDrawerButton(icon: Icons.info, text: 'About Us', onTap: () {
+              Navigator.of(context).pushNamed('/instructor_aboutus');
+            },),
+            FeatureDrawerButton(icon: Icons.logout, text: 'Logout', onTap: () {
+              Navigator.of(context).pushNamed('/login_instructor');
+            },),
+
+          ],
+        ),
       ),
       body: Center(
         child: ElevatedButton(

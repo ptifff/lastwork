@@ -9,8 +9,12 @@ class InstructorTopicSelection extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Learning Material'),
+        title: const Text('Uploading Material', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
+        ),
+        ),
         backgroundColor: Colors.purple,
+
       ),
       drawer: Drawer(
         child: ListView(
@@ -25,10 +29,11 @@ class InstructorTopicSelection extends StatelessWidget {
               Navigator.of(context).pushNamed('/instructor_tracking');
             },),
             FeatureDrawerButton(icon: Icons.live_help, text: 'Assistance Service', onTap: () {
+              Navigator.of(context).pushNamed('/assistance_service_instructor');
 
             },),
             FeatureDrawerButton(icon: Icons.info, text: 'About Us', onTap: () {
-              Navigator.of(context).pushNamed('/about_us');
+              Navigator.of(context).pushNamed('/instructor_aboutus');
             },),
             FeatureDrawerButton(icon: Icons.logout, text: 'Logout', onTap: () {
               Navigator.of(context).pushNamed('/login_instructor');
@@ -121,7 +126,7 @@ class PanelCard extends StatelessWidget {
               child: Text(
                 label,
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: 14.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.purple,
                 ),

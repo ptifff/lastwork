@@ -41,7 +41,7 @@ class StudentTopicSelection extends StatelessWidget {
               Navigator.of(context).pushNamed('/about_us');
             },),
             FeatureDrawerButton(icon: Icons.logout, text: 'Logout', onTap: () {
-              Navigator.of(context).pushNamed('/login_student');
+              Navigator.of(context).pushNamed('/student_login');
             },),
           ],
         ),

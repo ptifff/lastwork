@@ -97,10 +97,13 @@ class _PlayQuizStudentState extends State<PlayQuizStudent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz'),
         centerTitle: true,
+        title: const Text('Play Quiz', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
+        ),
+        ),
         backgroundColor: Colors.purple,
-        elevation: 0.0,
+
       ),
       body: _isLoading
           ? Container(
@@ -146,9 +149,11 @@ class _PlayQuizStudentState extends State<PlayQuizStudent> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.done_outline_sharp),
+        child: Icon(
+          Icons.done_outline_sharp,
+          color: Colors.white, // Set the icon color to white
+        ),
         backgroundColor: Colors.purple,
-
         onPressed: () {
           Navigator.pushReplacement(
             context,

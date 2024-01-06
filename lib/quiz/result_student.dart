@@ -33,7 +33,7 @@ class _StudentResultState extends State<StudentResult> {
                   onTap: (){
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StudentHome()));
                   },
-                  child: orangeButton(context, "Go To Home", MediaQuery.of(context).size.width/2, Colors.blueAccent)
+                  child: orangeButton(context, "Go To Home", MediaQuery.of(context).size.width/2, Colors.purple)
               ),
             ],
           ),

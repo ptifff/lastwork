@@ -52,20 +52,13 @@ class _CreateQuizState extends State<CreateQuiz> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => QuizList()),
-              );
-            },
-            icon: Icon(Icons.list_alt_sharp, color: Colors.black87),
-          )
-        ],
-        iconTheme: IconThemeData(color: Colors.black87),
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
+        centerTitle: true,
+        title: const Text('Create Quiz', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
+        ),
+        ),
+        backgroundColor: Colors.purple,
+
       ),
       body: _isLoading
           ? Container(
@@ -110,7 +103,7 @@ class _CreateQuizState extends State<CreateQuiz> {
                   return val!.isEmpty ? "Enter quiz description" : null;
                 },
               ),
-              Spacer(),
+              SizedBox(height: 100),
               GestureDetector(
                 onTap: () {
                   _createQuizOnline();
@@ -119,7 +112,7 @@ class _CreateQuizState extends State<CreateQuiz> {
                   context,
                   "Create Quiz",
                   MediaQuery.of(context).size.width - 48,
-                  Colors.deepOrangeAccent,
+                  Colors.purple,
                 ),
               ),
               SizedBox(height: 40.0),

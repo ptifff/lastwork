@@ -4,26 +4,23 @@ class AboutUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('About Us'),
-          backgroundColor: Colors.purple,
-          actions: [
-            IconButton(
-              icon: Icon(Icons.logout),
-              onPressed: () {
-                // Implement logout functionality here
-              },
-            ),
-          ],
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('About Us', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
         ),
+        ),
+        backgroundColor: Colors.purple,
+
+      ),
       drawer: Drawer(
         child: ListView(
           children: [
             FeatureDrawerButton(icon: Icons.school, text: 'Learning', onTap: () {
-              Navigator.of(context).pushNamed('/learning_material');
+              Navigator.of(context).pushNamed('/student_learning_selection');
             },),
             FeatureDrawerButton(icon: Icons.book, text: 'Booking', onTap: () {
-              Navigator.of(context).pushNamed('/instructor_booking');
+              Navigator.of(context).pushNamed('/instructor_view');
 
             },),
             FeatureDrawerButton(icon: Icons.schedule, text: 'Scheduling', onTap: () {
@@ -39,7 +36,7 @@ class AboutUsScreen extends StatelessWidget {
               Navigator.of(context).pushNamed('/about_us');
             },),
             FeatureDrawerButton(icon: Icons.logout, text: 'Logout', onTap: () {
-              Navigator.of(context).pushNamed('/login_student');
+              Navigator.of(context).pushNamed('/student_login');
             },),
           ],
         ),

@@ -3,19 +3,15 @@ class InstructorHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Instructor Home"),
-          backgroundColor: Colors.purple,
-          actions: [
-            IconButton(
-              icon: Icon(Icons.logout),
-              onPressed: () {
-                // Implement logout functionality here
-                Navigator.pushReplacementNamed(context, '/login');
-              },
-            ),
-          ],
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('HomeScreen', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
         ),
+        ),
+        backgroundColor: Colors.purple,
+
+      ),
         drawer: Drawer(
           child: ListView(
             children: [
@@ -29,13 +25,14 @@ class InstructorHomeScreen extends StatelessWidget {
                 Navigator.of(context).pushNamed('/instructor_tracking');
               },),
               FeatureDrawerButton(icon: Icons.live_help, text: 'Assistance Service', onTap: () {
+                Navigator.of(context).pushNamed('/assistance_service_instructor');
 
               },),
               FeatureDrawerButton(icon: Icons.info, text: 'About Us', onTap: () {
-                Navigator.of(context).pushNamed('/about_us');
+                Navigator.of(context).pushNamed('/instructor_aboutus');
                 },),
               FeatureDrawerButton(icon: Icons.logout, text: 'Logout', onTap: () {
-                Navigator.of(context).pushNamed('/login');
+                Navigator.of(context).pushNamed('/login_instructor');
               },),
 
             ],

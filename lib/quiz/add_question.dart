@@ -56,10 +56,13 @@ class _AddQuestionState extends State<AddQuestion> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: appBar(context),
-        iconTheme: IconThemeData(color: Colors.black87),
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
+        centerTitle: true,
+        title: const Text('Add Questions', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
+        ),
+        ),
+        backgroundColor: Colors.purple,
+
       ),
       body: _isLoading ? Container(
         child: Center(
@@ -142,6 +145,7 @@ class _AddQuestionState extends State<AddQuestion> {
                   return val!.isEmpty ? "Enter correct answer" : null;
                 },
               ),
+              SizedBox(height: 50),
 
               Row(
                 children: [
@@ -149,14 +153,14 @@ class _AddQuestionState extends State<AddQuestion> {
                       onTap: (){
                         Navigator.pop(context);
                       },
-                      child: orangeButton(context, "Submit", MediaQuery.of(context).size.width/2 - 36, Colors.deepOrangeAccent)
+                      child: orangeButton(context, "Submit", MediaQuery.of(context).size.width/2 - 36, Colors.red)
                   ),
                   SizedBox(width: 24,),
                   GestureDetector(
                       onTap: (){
                         _uploadQuestionData();
                       },
-                      child: orangeButton(context, "Add Question", MediaQuery.of(context).size.width/2 - 36, Colors.blueAccent)
+                      child: orangeButton(context, "Add Question", MediaQuery.of(context).size.width/2 - 36, Colors.purple)
                   ),
                 ]
               ),

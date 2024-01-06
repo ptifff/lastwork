@@ -11,8 +11,13 @@ class SelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
           appBar: AppBar(
-            title: Text('Panel Selection'),
+            centerTitle: true,
+            title: const Text('Panel Selection', style: TextStyle(
+              color: Colors.white, // Set app bar text color to white
+            ),
+            ),
             backgroundColor: Colors.purple,
+
 
           ),
           body: Container(

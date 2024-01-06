@@ -269,7 +269,7 @@ class _LearnerEventScreenState extends State<LearnerEventScreen> {
               Navigator.of(context).pushNamed('/about_us');
             },),
             FeatureDrawerButton(icon: Icons.logout, text: 'Logout', onTap: () {
-              Navigator.of(context).pushNamed('/login_student');
+              Navigator.of(context).pushNamed('/student_login');
             },),
           ],
         ),
@@ -323,9 +323,13 @@ class _LearnerEventScreenState extends State<LearnerEventScreen> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _showAddEventDialog(),
-        label: const Text('Add Event'),
+        label: const Text(
+          'Add Event',
+          style: TextStyle(
+            color: Colors.white, // Set the text color to white
+          ),
+        ),
         backgroundColor: Colors.purple, // Set the background color for the FloatingActionButton
-
       ),
     );
   }

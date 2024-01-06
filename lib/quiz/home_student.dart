@@ -76,10 +76,13 @@ class _StudentHomeState extends State<StudentHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz'),
         centerTitle: true,
+        title: const Text('Quiz', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
+        ),
+        ),
         backgroundColor: Colors.purple,
-        elevation: 0.0,
+
       ),
       drawer: Drawer(
         child: ListView(
@@ -104,12 +107,13 @@ class _StudentHomeState extends State<StudentHome> {
                 icon: Icons.track_changes,
                 text: 'Tracking',
                 onTap: () {
-                  Navigator.of(context).pushNamed('/instructor_tracking');
+                  Navigator.of(context).pushNamed('/learner_tracking');
                 }),
             FeatureDrawerButton(
                 icon: Icons.live_help,
                 text: 'Assistance Service',
-                onTap: () {}),
+                onTap: () {              Navigator.of(context).pushNamed('/assistance_service_student');
+                }),
             FeatureDrawerButton(
                 icon: Icons.info,
                 text: 'About Us',

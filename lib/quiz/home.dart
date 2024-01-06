@@ -75,22 +75,13 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz'),
-    centerTitle: true,
-    elevation: 0.0,
-    backgroundColor: Colors.purple,
+        centerTitle: true,
+        title: const Text('Uploading Quiz', style: TextStyle(
+          color: Colors.white, // Set app bar text color to white
+        ),
+        ),
+        backgroundColor: Colors.purple,
 
-        actions: [
-          IconButton(
-            onPressed: () {
-              // Add your sign out logic here
-            },
-            icon: Icon(
-              Icons.exit_to_app,
-              color: Colors.white,
-            ),
-          )
-        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -111,7 +102,7 @@ class _HomeState extends State<Home> {
               Navigator.of(context).pushNamed('/about_us');
             },),
             FeatureDrawerButton(icon: Icons.logout, text: 'Logout', onTap: () {
-              Navigator.of(context).pushNamed('/login');
+              Navigator.of(context).pushNamed('/login_instructor');
             },),
           ],
         ),
@@ -122,7 +113,10 @@ class _HomeState extends State<Home> {
       )
           : quizList(),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: Colors.white, // Set the icon color to white
+        ),
         backgroundColor: Colors.purple,
         onPressed: () {
           Navigator.push(
